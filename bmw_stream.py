@@ -8,8 +8,8 @@ from itertools import permutations
 
 #======================  DATA EXTRACTION & PREPROCESSING  =====================
 
-file1 = "https://github.com/RoniKonrad/SAITPROJ/blob/path/Ready_Data.csv"
-file2 = "https://github.com/RoniKonrad/SAITPROJ/blob/path/Aggregated%20Data.csv"
+file1 = "Ready_Data.csv"
+file2 = "Aggregated Data.csv"
 
 df_original = pd.read_csv(file1)
 df = pd.read_csv(file2,index_col="CUST_KEY")
