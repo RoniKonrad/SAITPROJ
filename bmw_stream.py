@@ -12,8 +12,8 @@ from pathlib import Path
 #file1 = (base_path / "Ready_data.csv").resolve()
 #file2 = (base_path / "Aggregated Data.csv").resolve()
 
-file1 = "/app/saitproj/main/Ready_data.csv"
-file2 = "/app/saitproj/main/Aggregated Data.csv"
+file1 = "/Ready_data.csv"
+file2 = "/Aggregated Data.csv"
 
 df_original = pd.read_csv(file1)
 df = pd.read_csv(file2,index_col="CUST_KEY")
