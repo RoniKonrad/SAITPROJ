@@ -11,14 +11,8 @@ from pathlib import Path
 #======================  DATA EXTRACTION & PREPROCESSING  =====================
    
 
-
-base_path = Path(__file__).parent
-file1 = (base_path / "Ready_data.csv").resolve()
-file2 = (base_path / "Aggregated Data.csv").resolve()
-
-    
-# file1 = "Ready_data.csv"
-# file2 = "Aggregated Data.csv"
+file1 = "https://raw.githubusercontent.com/RoniKonrad/SAITPROJ/path/Ready_Data.csv"
+file2 = "https://raw.githubusercontent.com/RoniKonrad/SAITPROJ/path/Aggregated%20Data.csv"
 
 df_original = pd.read_csv(file1)
 df = pd.read_csv(file2,index_col="CUST_KEY")
