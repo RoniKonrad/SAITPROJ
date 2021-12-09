@@ -5,11 +5,20 @@ import sklearn
 from sklearn.metrics import pairwise_distances
 from sklearn.preprocessing import MinMaxScaler, LabelEncoder
 from itertools import permutations
+#import csv
+from pathlib import Path
 
 #======================  DATA EXTRACTION & PREPROCESSING  =====================
+   
 
-file1 = "https://raw.githubusercontent.com/RoniKonrad/SAITPROJ/path/Ready_Data.csv"
-file2 = "https://raw.githubusercontent.com/RoniKonrad/SAITPROJ/path/Aggregated%20Data.csv"
+
+base_path = Path(__file__).parent
+file1 = (base_path / "Ready_data.csv").resolve()
+file2 = (base_path / "Aggregated Data.csv").resolve()
+
+    
+# file1 = "Ready_data.csv"
+# file2 = "Aggregated Data.csv"
 
 df_original = pd.read_csv(file1)
 df = pd.read_csv(file2,index_col="CUST_KEY")
@@ -156,3 +165,6 @@ j = st.sidebar.selectbox("Service Description:",np.sort(df2["Service 1"].unique(
 if st.sidebar.button("Run Packages by Service",key="New4"):
     st.header("Recommended Service Packages")
     st.dataframe(count[count["Service 1"] == j].sort_values(by="frequency",ascending =False)[1:(int(i)+1)])
+    
+if st.button("Click for Surprise",key="baloons"):
+    st.balloons()
